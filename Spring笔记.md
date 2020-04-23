@@ -273,3 +273,32 @@
 > 切点：AOP通过切点定位到特殊的连接点
 
 <img src="C:\Users\11346\AppData\Roaming\Typora\typora-user-images\image-20200422004426090.png" alt="image-20200422004426090" style="zoom:67%;" />
+
+
+
+### 使用AOP
+
+#### 	AspectJ注解的形式
+
+> ​		需要把切面的类声明为一个切面
+>
+> ​		将改类放入到IIOC容器中@Component 再声明为一个切面@Aspect
+>
+> ​		在切面的方法前面加入@Before（前置通知）声明在哪些类的哪些方法前进行执行
+>
+> ​		在配置文件中设置 使AspectJ起作用
+>
+> ​		可以在通知方法中加一个类型为JointPoint的参数，就能访问到连接细节，如方和和参数值
+
+#### 	通知的类型
+
+> ​	前置通知：在方法开始前执行 @Before （在动态代理的invoke方法前执行）
+>
+> ​	后置通知：在目标方法后（无论是否发生异常）执行的通知。在后置通知中还不能访问目标方法执行的结果  @After（在动态代理的invoke方法后 catch之外执行）
+>
+> ​	返回通知：在方法正常结束后执行的代码 是可以访问到方法返回值的@AfterReturning
+>
+> ​	异常通知：可以访问到方法运行时的异常 @AfterThrowing（在invoke的catch代码块中）
+>
+> ​	环绕通知：需要携带ProceedingJoinPoint参数 类似动态代理的全过程。方法的形式类似于实现动态代理。process方法代替了invoke
+
