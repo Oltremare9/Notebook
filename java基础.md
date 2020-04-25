@@ -56,3 +56,16 @@ public interface Interface {
 
 ### <u>java中的流</u>
 
+#### 	字节流
+
+> ​	以字节为导向的 stream------InputStream/OutputStream
+
+#### 	字符流
+
+> ​	以字符为导向的 stream Reader/Writer
+
+
+
+#### 	流没有释放会导致的问题
+
+> ​	长时间不进行释放会一直占用内存 长时间可能导致OOM
