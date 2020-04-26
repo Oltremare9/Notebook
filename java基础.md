@@ -64,8 +64,12 @@ public interface Interface {
 
 > ​	以字符为导向的 stream Reader/Writer
 
-
-
 #### 	流没有释放会导致的问题
 
 > ​	长时间不进行释放会一直占用内存 长时间可能导致OOM
+
+
+
+### Tomcat类加载
+
+> https://www.cnblogs.com/aspirant/p/8991830.html
