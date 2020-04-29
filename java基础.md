@@ -119,3 +119,22 @@ public interface Interface {
 
 
 ### 异常分为两种 有什么不同
+
+#### error
+
+> 是指 java 运行时系统的内部错误和资源耗尽错误。应用程序不会抛出该类对象。如果出现了这样的错误，除了告知用户，剩下的就是尽力使程序安全的终止。
+
+#### exception
+
+> 运行时异常RuntimeException
+>
+> > 是那些可能在 Java 虚拟机正常运行期间抛出的异常的超类。 如果出现 RuntimeException，那么一定是程序员代码书写导致的错误.
+> >
+> > 例如：空指针异常 下标越界
+>
+> 检查异常 CheckedException
+>
+> > 一般是外部错误，这种异常都发生在编译阶段，Java 编译器会强
+> > 制程序去捕获此类异常，即会出现要求你把这段可能出现异常的程序进行 try catch
+> >
+> > 例如：IOException SQLException
