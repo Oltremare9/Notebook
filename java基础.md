@@ -70,19 +70,19 @@ public interface Interface {
 
 
 
-### Tomcat类加载
+### <u>Tomcat类加载</u>
 
 > https://www.cnblogs.com/aspirant/p/8991830.html
 
 
 
-### 类加载如何打破双亲委派
+### <u>类加载如何打破双亲委派</u>
 
 > 重写classload方法
 >
 > 重写findclass方法 实现自定义的类加载方式
 
-### OOM的场景 查询工具
+### <u>OOM的场景 查询工具</u>
 
 #### 场景
 
@@ -114,11 +114,11 @@ public interface Interface {
 
 
 
-### JDK提供的工具
+### <u>JDK提供的工具</u>
 
 
 
-### 异常分为两种 有什么不同
+### <u>异常分为两种 有什么不同</u>
 
 #### error
 
@@ -138,3 +138,64 @@ public interface Interface {
 > > 制程序去捕获此类异常，即会出现要求你把这段可能出现异常的程序进行 try catch
 > >
 > > 例如：IOException SQLException
+
+### java集合
+
+#### list
+
+> ArrayList
+>
+> > **优点:** 底层数据结构是数组，查询快，增删慢。
+> > **缺点:** 线程不安全，效率高
+>
+> Vector
+>
+> > **优点:** 底层数据结构是数组，查询快，增删慢。
+> > **缺点:** 线程安全，效率低
+>
+> LinkedList
+>
+> > **优点:** 底层数据结构是链表，查询慢，增删快。
+> > **缺点:** 线程不安全，效率高
+
+#### set
+
+> HashSet
+>
+> > 底层数据结构是哈希表。(无序,唯一)
+> > 如何来保证元素唯一性?
+> > 1.依赖两个方法：hashCode()和equals()
+>
+> LinkedHashSet
+>
+> > 底层数据结构是链表和哈希表。(FIFO插入有序,唯一)
+> > 1.由链表保证元素有序
+> > 2.由哈希表保证元素唯一
+>
+> TreeSet
+>
+> > 底层数据结构是红黑树。(唯一，有序)
+> > \1. 如何保证元素排序的呢?
+> > 自然排序
+> > 比较器排序
+> > 2.如何保证元素唯一性的呢?
+> > 根据比较的返回值是否是0来决定
+
+#### map
+
+> Hashtable
+>
+> > 线程安全 使用了synchronized
+>
+> LinkedHashMap
+>
+> > 在hashmap的基础上增加了有序
+>
+> ConcurrentHashMap
+>
+> > 1.7中使用分段锁 1.8放弃了分段锁的概念，而是直接用Node数组+链表+红黑树的数据结构来实现，如下图所示，并发控制使用Synchronized和CAS来操作，每一个Node节点都是用volatile修饰的，整个看起来就像是优化过且线程安全的HashMap。
+>
+> HashMap
+>
+> > Hashmap是线程不安全的 1.7数组+链表 1.8数组+链表/红黑树
+
