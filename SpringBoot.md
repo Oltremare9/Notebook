@@ -197,3 +197,30 @@
 
 
 ### 单例模式和spring的单例有什么区别
+
+
+
+### <u>如何优化减库存操作</u>
+
+初始方法
+
+```
+query();
+@transactional
+set quantity=quantity-1
+```
+
+问题：在第一次进行查询时，如果不加事务的标记，则会导致超卖问题。如果加上了事务标记，则会影响并发
+
+解决方案：不要进行query查询库存，直接用一次sql来处理，在一次sql中执行以下操作
+
+```mysql
+update set quantity=quantity-1
+where good_id=1 and quantity>0
+```
+
+### <u>做登陆时有什么其他办法做用户的参数解析</u>
+
+> 1用目前采用的方法。在请求发送到controller之前，用参数解析器，进行参数的解析。以用户信息实体的形式，传入controller
+>
+> 2threadlocal的形式来存放用户的相关信息。直接使用线程上下文的形式
