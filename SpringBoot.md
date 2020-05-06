@@ -224,3 +224,7 @@ where good_id=1 and quantity>0
 > 1用目前采用的方法。在请求发送到controller之前，用参数解析器，进行参数的解析。以用户信息实体的形式，传入controller
 >
 > 2threadlocal的形式来存放用户的相关信息。直接使用线程上下文的形式
+
+
+
+### springboot 和 springmvc的区别
