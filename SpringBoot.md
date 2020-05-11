@@ -228,3 +228,17 @@ where good_id=1 and quantity>0
 
 
 ### springboot 和 springmvc的区别
+
+
+
+### 如何处理异常
+
+##### 全局异常 @ControllerAdvice @ExceptionHandler
+
+> 可以通过@ControllerAdvice注解的方式 定义一个全局异常处理类
+>
+> 其中通过@ExceptionHandler注解可以设置处理的异常类类型
+
+##### 局部异常
+
+> @ExceptionHandler注解修饰方法 但是会跳转刀统一的error页面
